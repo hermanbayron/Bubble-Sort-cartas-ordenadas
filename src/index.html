@@ -32,12 +32,12 @@
   </head>
 
   <body id="body" class="">
-    <div class="card w-50">
+    <div class="card w-25">
       <div class="card-body">
         <!-- titulo -->
-        <h5 class="">Escribe un numero entre el 1 y el 10</h5>
+        <h5 class="">Escribe un numero entre el 1 y el 20</h5>
         <!-- input -->
-        <input type="text" id="containerInput" />
+        <input type="number" max="20" min="0" id="containerInput" />
         <!-- botones -->
         <button
           type="submit"
@@ -51,7 +51,7 @@
         </button>
       </div>
     </div>
-    <div class="d-flex" id="container"></div>
+    <div class="d-flex flex-wrap" id="container"></div>
     <!-- scripts -->
     <script src="./app.js"></script>
     <script

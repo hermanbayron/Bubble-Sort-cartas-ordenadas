@@ -10,7 +10,7 @@ window.onload = function() {
 
   // elementos de la Carta aleatoria
   const palo = ["♦", "♥", "♠", "♣"];
-  const number = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
+  const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
   let ordenar = [];
 
@@ -72,6 +72,34 @@ window.onload = function() {
 
   button.addEventListener("click", function() {
     let nuevoArrayOrdenado = bubbleSort(ordenar);
+    dibujarCartasOrdenadas(nuevoArrayOrdenado);
     console.log(nuevoArrayOrdenado);
+  });
+
+  const dibujarCartasOrdenadas = Arr => {
+    container.innerHTML = "";
+    for (let i = 0; i < Arr.length; i++) {
+      container.innerHTML += `<div class="card m-3">
+    <div class="">
+      <div class="">
+        <div id="paloTop">${Arr[i].palo}</div>
+      </div>
+      <div class="">
+        <div id="number">${Arr[i].number}</div>
+      </div>
+      <div>
+        <div id="paloBot">${Arr[i].palo}</div>
+      </div>
+    </div>
+  </div>`;
+    }
+  };
+
+  input.addEventListener("input", function() {
+    if (input.value <= 0) {
+      input.value = 1;
+    } else if (input.value > 20) {
+      input.value = 20;
+    }
   });
 };
